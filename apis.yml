@@ -1,0 +1,20 @@
+aid: johnson-and-johnson
+url: https://raw.githubusercontent.com/api-evangelist/johnson-and-johnson/refs/heads/main/apis.yml
+apis:
+  - aid: johnson-and-johnson:lifescan-api
+    name: Johnson & Johnson LifeScan API
+    tags:
+      - Healthcare
+      - Medical Devices
+      - Diabetes
+      - Blood Glucose
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api.lifescan.com
+    humanURL: https://github.com/bulltonic/lifescan-apiportal
+    properties:
+      - url: https://github.com/bulltonic/lifescan-apiportal
+        type: Documentation
+      - url: openapi/johnson-and-johnson-lifescan-api-openapi.yml
+        type: OpenAPI
+    description: >-
+      The Johnson & Johnson LifeScan API provides programmatic access to blood glucose monitoring data and diabetes management tools. LifeScan, a Johnson & Johnson company, develops products like the OneTouch brand of blood glucose meters. The API enables developers to integrate glucose monitoring data into health applications and wellness platforms.
