@@ -1,0 +1,80 @@
+openapi: 3.1.0
+info:
+  title: Johnson & Johnson LifeScan API
+  description: >-
+    The Johnson & Johnson LifeScan API provides programmatic access to blood
+    glucose monitoring data and diabetes management tools. LifeScan develops
+    the OneTouch brand of blood glucose meters, and this API enables developers
+    to integrate glucose monitoring data into health applications and wellness
+    platforms for improved diabetes management.
+  version: '1.0'
+servers:
+  - url: https://api.lifescan.com
+tags:
+  - name: Glucose Readings
+    description: Manage and retrieve blood glucose reading data.
+  - name: Devices
+    description: Manage connected glucose monitoring devices.
+  - name: Patients
+    description: Access patient profile and health information.
+paths:
+  /glucose-readings:
+    get:
+      operationId: listGlucoseReadings
+      summary: List glucose readings
+      description: >-
+        Retrieves a list of blood glucose readings for a specified patient,
+        with optional filtering by date range and reading type.
+      tags:
+        - Glucose Readings
+      parameters:
+        - name: patientId
+          in: query
+          description: The unique identifier of the patient.
+          required: true
+          schema:
+            type: string
+        - name: startDate
+          in: query
+          description: Filter readings from this date (ISO 8601).
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          in: query
+          description: Filter readings up to this date (ISO 8601).
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+  /devices:
+    get:
+      operationId: listDevices
+      summary: List devices
+      description: >-
+        Retrieves a list of registered glucose monitoring devices associated
+        with a patient account.
+      tags:
+        - Devices
+      responses:
+        '200':
+          description: Success
+  /patients:
+    get:
+      operationId: listPatients
+      summary: List patients
+      description: >-
+        Retrieves a list of patients associated with the authenticated
+        healthcare provider or application.
+      tags:
+        - Patients
+      responses:
+        '200':
+          description: Success
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
