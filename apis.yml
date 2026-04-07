@@ -1,16 +1,14 @@
 aid: johnson-and-johnson
-url: 
-  https://raw.githubusercontent.com/api-evangelist/johnson-and-johnson/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/johnson-and-johnson/refs/heads/main/apis.yml
 apis:
   - aid: johnson-and-johnson:lifescan-api
     name: Johnson & Johnson LifeScan API
     tags:
+      - Blood Glucose
+      - Diabetes
       - Healthcare
       - Medical Devices
-      - Diabetes
-      - Blood Glucose
-    image: 
-      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.lifescan.com
     humanURL: https://github.com/bulltonic/lifescan-apiportal
     properties:

@@ -11,10 +11,10 @@ info:
 servers:
   - url: https://api.lifescan.com
 tags:
-  - name: Glucose Readings
-    description: Manage and retrieve blood glucose reading data.
   - name: Devices
     description: Manage connected glucose monitoring devices.
+  - name: Glucose Readings
+    description: Manage and retrieve blood glucose reading data.
   - name: Patients
     description: Access patient profile and health information.
 paths:
