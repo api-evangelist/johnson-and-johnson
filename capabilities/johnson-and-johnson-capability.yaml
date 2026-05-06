@@ -1,0 +1,161 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Johnson & Johnson LifeScan API
+  description: The Johnson & Johnson LifeScan API provides programmatic access to blood glucose monitoring data and diabetes
+    management tools. LifeScan develops the OneTouch brand of blood glucose meters, and this API enables developers to integrate
+    glucose monitoring data into health applications and wellness platforms for improved diabetes management.
+  tags:
+  - Johnson
+  - And
+  - Johnson
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: johnson-and-johnson
+    baseUri: https://api.lifescan.com
+    description: Johnson & Johnson LifeScan API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{JOHNSON_AND_JOHNSON_TOKEN}}'
+    resources:
+    - name: glucose-readings
+      path: /glucose-readings
+      operations:
+      - name: listglucosereadings
+        method: GET
+        description: List glucose readings
+        inputParameters:
+        - name: patientId
+          in: query
+          type: string
+          required: true
+          description: The unique identifier of the patient.
+        - name: startDate
+          in: query
+          type: string
+          description: Filter readings from this date (ISO 8601).
+        - name: endDate
+          in: query
+          type: string
+          description: Filter readings up to this date (ISO 8601).
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: devices
+      path: /devices
+      operations:
+      - name: listdevices
+        method: GET
+        description: List devices
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: patients
+      path: /patients
+      operations:
+      - name: listpatients
+        method: GET
+        description: List patients
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: johnson-and-johnson-rest
+    description: REST adapter for Johnson & Johnson LifeScan API.
+    resources:
+    - path: /glucose-readings
+      name: listglucosereadings
+      operations:
+      - method: GET
+        name: listglucosereadings
+        description: List glucose readings
+        call: johnson-and-johnson.listglucosereadings
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /devices
+      name: listdevices
+      operations:
+      - method: GET
+        name: listdevices
+        description: List devices
+        call: johnson-and-johnson.listdevices
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /patients
+      name: listpatients
+      operations:
+      - method: GET
+        name: listpatients
+        description: List patients
+        call: johnson-and-johnson.listpatients
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: johnson-and-johnson-mcp
+    transport: http
+    description: MCP adapter for Johnson & Johnson LifeScan API for AI agent use.
+    tools:
+    - name: listglucosereadings
+      description: List glucose readings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: johnson-and-johnson.listglucosereadings
+      with:
+        patientId: tools.patientId
+        startDate: tools.startDate
+        endDate: tools.endDate
+      inputParameters:
+      - name: patientId
+        type: string
+        description: The unique identifier of the patient.
+        required: true
+      - name: startDate
+        type: string
+        description: Filter readings from this date (ISO 8601).
+      - name: endDate
+        type: string
+        description: Filter readings up to this date (ISO 8601).
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listdevices
+      description: List devices
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: johnson-and-johnson.listdevices
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listpatients
+      description: List patients
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: johnson-and-johnson.listpatients
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    JOHNSON_AND_JOHNSON_TOKEN: JOHNSON_AND_JOHNSON_TOKEN
