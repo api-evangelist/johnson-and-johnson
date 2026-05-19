@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Johnson & Johnson LifeScan API — Devices
+  description: 'Johnson & Johnson LifeScan API — Devices. 1 operations. Lead operation: List devices. Self-contained Naftiko
+    capability covering one Johnson And Johnson business surface.'
+  tags:
+  - Johnson And Johnson
+  - Devices
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    JOHNSON_AND_JOHNSON_API_KEY: JOHNSON_AND_JOHNSON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: lifescan-devices
+    baseUri: https://api.lifescan.com
+    description: Johnson & Johnson LifeScan API — Devices business capability. Self-contained, no shared references.
+    resources:
+    - name: devices
+      path: /devices
+      operations:
+      - name: listdevices
+        method: GET
+        description: List devices
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.JOHNSON_AND_JOHNSON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: lifescan-devices-rest
+    port: 8080
+    description: REST adapter for Johnson & Johnson LifeScan API — Devices. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/devices
+      name: devices
+      description: REST surface for devices.
+      operations:
+      - method: GET
+        name: listdevices
+        description: List devices
+        call: lifescan-devices.listdevices
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: lifescan-devices-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Johnson & Johnson LifeScan API — Devices. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: list-devices
+      description: List devices
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: lifescan-devices.listdevices
+      outputParameters:
+      - type: object
+        mapping: $.

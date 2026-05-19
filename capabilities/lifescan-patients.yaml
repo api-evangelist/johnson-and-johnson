@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Johnson & Johnson LifeScan API — Patients
+  description: 'Johnson & Johnson LifeScan API — Patients. 1 operations. Lead operation: List patients. Self-contained Naftiko
+    capability covering one Johnson And Johnson business surface.'
+  tags:
+  - Johnson And Johnson
+  - Patients
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    JOHNSON_AND_JOHNSON_API_KEY: JOHNSON_AND_JOHNSON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: lifescan-patients
+    baseUri: https://api.lifescan.com
+    description: Johnson & Johnson LifeScan API — Patients business capability. Self-contained, no shared references.
+    resources:
+    - name: patients
+      path: /patients
+      operations:
+      - name: listpatients
+        method: GET
+        description: List patients
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.JOHNSON_AND_JOHNSON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: lifescan-patients-rest
+    port: 8080
+    description: REST adapter for Johnson & Johnson LifeScan API — Patients. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/patients
+      name: patients
+      description: REST surface for patients.
+      operations:
+      - method: GET
+        name: listpatients
+        description: List patients
+        call: lifescan-patients.listpatients
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: lifescan-patients-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Johnson & Johnson LifeScan API — Patients. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: list-patients
+      description: List patients
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: lifescan-patients.listpatients
+      outputParameters:
+      - type: object
+        mapping: $.

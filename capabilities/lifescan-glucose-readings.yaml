@@ -1,0 +1,92 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Johnson & Johnson LifeScan API — Glucose Readings
+  description: 'Johnson & Johnson LifeScan API — Glucose Readings. 1 operations. Lead operation: List glucose readings. Self-contained
+    Naftiko capability covering one Johnson And Johnson business surface.'
+  tags:
+  - Johnson And Johnson
+  - Glucose Readings
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    JOHNSON_AND_JOHNSON_API_KEY: JOHNSON_AND_JOHNSON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: lifescan-glucose-readings
+    baseUri: https://api.lifescan.com
+    description: Johnson & Johnson LifeScan API — Glucose Readings business capability. Self-contained, no shared references.
+    resources:
+    - name: glucose-readings
+      path: /glucose-readings
+      operations:
+      - name: listglucosereadings
+        method: GET
+        description: List glucose readings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: patientId
+          in: query
+          type: string
+          description: The unique identifier of the patient.
+          required: true
+        - name: startDate
+          in: query
+          type: string
+          description: Filter readings from this date (ISO 8601).
+        - name: endDate
+          in: query
+          type: string
+          description: Filter readings up to this date (ISO 8601).
+    authentication:
+      type: bearer
+      token: '{{env.JOHNSON_AND_JOHNSON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: lifescan-glucose-readings-rest
+    port: 8080
+    description: REST adapter for Johnson & Johnson LifeScan API — Glucose Readings. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/glucose-readings
+      name: glucose-readings
+      description: REST surface for glucose-readings.
+      operations:
+      - method: GET
+        name: listglucosereadings
+        description: List glucose readings
+        call: lifescan-glucose-readings.listglucosereadings
+        with:
+          patientId: rest.patientId
+          startDate: rest.startDate
+          endDate: rest.endDate
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: lifescan-glucose-readings-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Johnson & Johnson LifeScan API — Glucose Readings. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: list-glucose-readings
+      description: List glucose readings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: lifescan-glucose-readings.listglucosereadings
+      with:
+        patientId: tools.patientId
+        startDate: tools.startDate
+        endDate: tools.endDate
+      outputParameters:
+      - type: object
+        mapping: $.
