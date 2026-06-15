@@ -1,0 +1,87 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Johnson & Johnson LifeScan API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Glucose Readings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List glucose readings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.lifescan.com/glucose-readings",
+            "params": [
+              {
+                "name": "patientId",
+                "value": "",
+                "type": "query",
+                "description": "The unique identifier of the patient."
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter readings from this date (ISO 8601)."
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter readings up to this date (ISO 8601)."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of blood glucose readings for a specified patient, with optional filtering by date range and reading type."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Devices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List devices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.lifescan.com/devices"
+          },
+          "docs": "Retrieves a list of registered glucose monitoring devices associated with a patient account."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Patients",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List patients",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.lifescan.com/patients"
+          },
+          "docs": "Retrieves a list of patients associated with the authenticated healthcare provider or application."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

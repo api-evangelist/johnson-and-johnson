@@ -1,0 +1,260 @@
+{
+  "item": [
+    {
+      "id": "5d18c435-5297-4f59-8008-63ae01344637",
+      "name": "Devices",
+      "description": {
+        "content": "Manage connected glucose monitoring devices.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "30d734bd-4cd5-466a-aa3a-17b5dbffce04",
+          "name": "List devices",
+          "request": {
+            "name": "List devices",
+            "description": {
+              "content": "Retrieves a list of registered glucose monitoring devices associated with a patient account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "devices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1743815e-acc5-4377-b5bc-0da6febdac6b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "devices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "bba512ef-791b-4afc-8472-c180bd80d4b5",
+      "name": "Glucose Readings",
+      "description": {
+        "content": "Manage and retrieve blood glucose reading data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "52489d63-99ea-4902-b59f-6fd0ec8f6b29",
+          "name": "List glucose readings",
+          "request": {
+            "name": "List glucose readings",
+            "description": {
+              "content": "Retrieves a list of blood glucose readings for a specified patient, with optional filtering by date range and reading type.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "glucose-readings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "patientId",
+                  "value": "<string>",
+                  "description": "(Required) The unique identifier of the patient."
+                },
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<date>",
+                  "description": "Filter readings from this date (ISO 8601)."
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<date>",
+                  "description": "Filter readings up to this date (ISO 8601)."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a5dbe0f6-b4fb-4fd5-a9ca-0f8bfd77bd62",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "glucose-readings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "patientId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "96648959-1761-4559-9686-f8391ba461c9",
+      "name": "Patients",
+      "description": {
+        "content": "Access patient profile and health information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fe616062-ce72-48c3-9c6d-cd24c1aaa03a",
+          "name": "List patients",
+          "request": {
+            "name": "List patients",
+            "description": {
+              "content": "Retrieves a list of patients associated with the authenticated healthcare provider or application.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "patients"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6fffc4a1-dfe2-4872-a301-ede52411c171",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "patients"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.lifescan.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8c7051c5-34e4-451b-ab96-b44e5a054323",
+    "name": "Johnson & Johnson LifeScan API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Johnson & Johnson LifeScan API provides programmatic access to blood glucose monitoring data and diabetes management tools. LifeScan develops the OneTouch brand of blood glucose meters, and this API enables developers to integrate glucose monitoring data into health applications and wellness platforms for improved diabetes management.",
+      "type": "text/plain"
+    }
+  }
+}
