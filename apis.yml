@@ -43,6 +43,10 @@ apis:
       - type: OpenAPI
         url: openapi/johnson-and-johnson-lifescan-api-openapi.yml
 common:
+  - type: DomainSecurity
+    url: security/johnson-and-johnson-domain-security.yml
+  - type: Authentication
+    url: authentication/johnson-and-johnson-authentication.yml
   - type: Website
     url: https://www.jnj.com/
   - type: Portal
