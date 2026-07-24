@@ -1,0 +1,26 @@
+openapi: 3.1.0
+info:
+  title: Johnson & Johnson LifeScan Devices API
+  description: The Johnson & Johnson LifeScan API provides programmatic access to blood glucose monitoring data and diabetes management tools. LifeScan develops the OneTouch brand of blood glucose meters, and this API enables developers to integrate glucose monitoring data into health applications and wellness platforms for improved diabetes management.
+  version: '1.0'
+servers:
+- url: https://api.lifescan.com
+tags:
+- name: Devices
+  description: Manage connected glucose monitoring devices.
+paths:
+  /devices:
+    get:
+      operationId: listDevices
+      summary: List devices
+      description: Retrieves a list of registered glucose monitoring devices associated with a patient account.
+      tags:
+      - Devices
+      responses:
+        '200':
+          description: Success
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
