@@ -7,9 +7,22 @@ description: >-
   operate the LifeScan developer portal referenced here. Consumer health brands (Tylenol, Listerine, Neutrogena,
   Band-Aid) were spun out as Kenvue in 2023 and are tracked in a separate kenvue index.
 type: Index
+accessModel:
+  pricing: enterprise
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Enterprise · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/johnson-and-johnson.png
 tags:
   - Healthcare
   - Medical Devices
@@ -22,26 +35,42 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/johnson-and-johnson/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: johnson-and-johnson:lifescan-api
-    name: Johnson & Johnson LifeScan API
-    description: >-
-      The Johnson & Johnson LifeScan API provides programmatic access to blood glucose monitoring data and diabetes
-      management tools. LifeScan, historically a Johnson & Johnson company (divested in 2018), develops products like
-      the OneTouch brand of blood glucose meters. The API enables developers to integrate glucose monitoring data into
-      health applications and wellness platforms.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://github.com/bulltonic/lifescan-apiportal
-    baseURL: https://api.lifescan.com
-    tags:
-      - Blood Glucose
-      - Diabetes
-      - Healthcare
-      - Medical Devices
-    properties:
-      - type: Documentation
-        url: https://github.com/bulltonic/lifescan-apiportal
-      - type: OpenAPI
-        url: openapi/johnson-and-johnson-lifescan-api-openapi.yml
+- aid: johnson-and-johnson:johnson-and-johnson-devices-api
+  name: Johnson & Johnson Devices API
+  description: Manage connected glucose monitoring devices.
+  humanURL: https://github.com/bulltonic/lifescan-apiportal
+  baseURL: https://api.lifescan.com
+  tags:
+  - Devices
+  properties:
+  - type: OpenAPI
+    url: openapi/johnson-and-johnson-devices-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/bulltonic/lifescan-apiportal
+- aid: johnson-and-johnson:johnson-and-johnson-glucose-readings-api
+  name: Johnson & Johnson Glucose Readings API
+  description: Manage and retrieve blood glucose reading data.
+  humanURL: https://github.com/bulltonic/lifescan-apiportal
+  baseURL: https://api.lifescan.com
+  tags:
+  - Glucose Readings
+  properties:
+  - type: OpenAPI
+    url: openapi/johnson-and-johnson-glucose-readings-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/bulltonic/lifescan-apiportal
+- aid: johnson-and-johnson:johnson-and-johnson-patients-api
+  name: Johnson & Johnson Patients API
+  description: Access patient profile and health information.
+  humanURL: https://github.com/bulltonic/lifescan-apiportal
+  baseURL: https://api.lifescan.com
+  tags:
+  - Patients
+  properties:
+  - type: OpenAPI
+    url: openapi/johnson-and-johnson-patients-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/bulltonic/lifescan-apiportal
 common:
   - type: AgenticAccess
     url: agentic-access/johnson-and-johnson-agentic-access.yml
