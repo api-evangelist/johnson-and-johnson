@@ -1,0 +1,18 @@
+{
+  "provider": "johnson-and-johnson",
+  "sources": [
+    "johnson-and-johnson-devices-api-openapi.yml",
+    "johnson-and-johnson-glucose-readings-api-openapi.yml",
+    "johnson-and-johnson-patients-api-openapi.yml"
+  ],
+  "outputs": [
+    "johnson-and-johnson-devices-api-openapi.yml",
+    "johnson-and-johnson-glucose-readings-api-openapi.yml",
+    "johnson-and-johnson-patients-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
