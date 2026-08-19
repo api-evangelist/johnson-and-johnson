@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Johnson & Johnson LifeScan Devices API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Devices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List devices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.lifescan.com/devices"
+          },
+          "docs": "Retrieves a list of registered glucose monitoring devices associated with a patient account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

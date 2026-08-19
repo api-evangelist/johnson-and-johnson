@@ -1,0 +1,90 @@
+{
+  "item": [
+    {
+      "id": "df461e31-f0f9-47d2-8288-7ca9e0d82937",
+      "name": "Devices",
+      "description": {
+        "content": "Manage connected glucose monitoring devices.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9e3ca829-bba7-4157-ada3-87c03781cfe7",
+          "name": "List devices",
+          "request": {
+            "name": "List devices",
+            "description": {
+              "content": "Retrieves a list of registered glucose monitoring devices associated with a patient account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "devices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aa901fbb-39de-46cb-9a20-bacf3636757f",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "devices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.lifescan.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "99f49b5e-ed92-49b7-9e6e-7c1d815294cc",
+    "name": "Johnson & Johnson LifeScan Devices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Johnson & Johnson LifeScan API provides programmatic access to blood glucose monitoring data and diabetes management tools. LifeScan develops the OneTouch brand of blood glucose meters, and this API enables developers to integrate glucose monitoring data into health applications and wellness platforms for improved diabetes management.",
+      "type": "text/plain"
+    }
+  }
+}

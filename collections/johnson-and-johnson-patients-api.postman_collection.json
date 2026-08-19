@@ -1,0 +1,90 @@
+{
+  "item": [
+    {
+      "id": "a32067b1-6af6-4d60-9442-d155b3896d84",
+      "name": "Patients",
+      "description": {
+        "content": "Access patient profile and health information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6fba5571-8b0c-4e09-8f97-3f413ff24e7d",
+          "name": "List patients",
+          "request": {
+            "name": "List patients",
+            "description": {
+              "content": "Retrieves a list of patients associated with the authenticated healthcare provider or application.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "patients"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "af1bfc95-e1d5-4e21-9b22-11d3092e21d1",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "patients"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.lifescan.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1307d44a-f864-40d5-a126-64fc3cc362c7",
+    "name": "Johnson & Johnson LifeScan Devices Patients API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Johnson & Johnson LifeScan API provides programmatic access to blood glucose monitoring data and diabetes management tools. LifeScan develops the OneTouch brand of blood glucose meters, and this API enables developers to integrate glucose monitoring data into health applications and wellness platforms for improved diabetes management.",
+      "type": "text/plain"
+    }
+  }
+}

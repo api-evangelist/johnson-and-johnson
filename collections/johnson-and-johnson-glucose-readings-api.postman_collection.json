@@ -1,0 +1,122 @@
+{
+  "item": [
+    {
+      "id": "e24e3537-66f1-4307-bca5-aab6b52ea7cc",
+      "name": "Glucose Readings",
+      "description": {
+        "content": "Manage and retrieve blood glucose reading data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a52a11cc-2895-4855-bc6b-760b35c5e074",
+          "name": "List glucose readings",
+          "request": {
+            "name": "List glucose readings",
+            "description": {
+              "content": "Retrieves a list of blood glucose readings for a specified patient, with optional filtering by date range and reading type.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "glucose-readings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "patientId",
+                  "value": "<string>",
+                  "description": "(Required) The unique identifier of the patient."
+                },
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<date>",
+                  "description": "Filter readings from this date (ISO 8601)."
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<date>",
+                  "description": "Filter readings up to this date (ISO 8601)."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f6616c61-df5d-4240-9ccd-85dc159d696e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "glucose-readings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "patientId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.lifescan.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fb16c397-aefe-49a4-9551-2fab92f373df",
+    "name": "Johnson & Johnson LifeScan Devices Glucose Readings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Johnson & Johnson LifeScan API provides programmatic access to blood glucose monitoring data and diabetes management tools. LifeScan develops the OneTouch brand of blood glucose meters, and this API enables developers to integrate glucose monitoring data into health applications and wellness platforms for improved diabetes management.",
+      "type": "text/plain"
+    }
+  }
+}
