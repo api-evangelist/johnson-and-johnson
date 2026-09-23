@@ -1,7 +1,9 @@
 ---
 title: Johnson & Johnson Advances Polyphonic™ AI Fund for ...
 url: https://www.jnjmedtech.com/en-US/news/press-releases/johnson-johnson-advances-polyphonic-ai-fund-surgery-data-driven-healthcar/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Johnson & Johnson" press release artificial intelligence'
 position: 2
 source: serpapi-google

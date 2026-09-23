@@ -1,7 +1,9 @@
 ---
 title: We're using AI and other innovative technology in new ...
 url: https://www.facebook.com/jnj/posts/were-using-ai-and-other-innovative-technology-in-new-ways-to-advance-healthcaref/1761545181191612/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Johnson & Johnson" press release artificial intelligence'
 position: 5
 source: serpapi-google

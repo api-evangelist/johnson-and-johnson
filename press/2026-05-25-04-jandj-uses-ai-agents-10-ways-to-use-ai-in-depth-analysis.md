@@ -1,7 +1,9 @@
 ---
 title: 'J&J Uses AI Agents: 10 Ways to Use AI [In-Depth Analysis] ...'
 url: https://www.klover.ai/johnson-johnson-uses-ai-agents-10-ways-to-use-ai-in-depth-analysis-2025/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Johnson & Johnson" press release artificial intelligence'
 position: 4
 source: serpapi-google

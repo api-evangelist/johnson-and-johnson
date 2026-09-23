@@ -1,7 +1,9 @@
 ---
 title: 6 ways Johnson & Johnson is using AI to help advance ...
 url: https://www.jnj.com/innovation/artificial-intelligence-in-healthcare
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Johnson & Johnson" press release artificial intelligence'
 position: 1
 source: serpapi-google
