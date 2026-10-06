@@ -43,7 +43,7 @@ tags:
   - Pharmaceuticals
   - Fortune 100
 created: '2026-03-21'
-modified: '2026-05-19'
+modified: '2026-10-06'
 url: https://raw.githubusercontent.com/api-evangelist/johnson-and-johnson/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 apis:
@@ -84,6 +84,10 @@ apis:
   - type: Documentation
     url: https://github.com/bulltonic/lifescan-apiportal
 common:
+  - url: https://www.jnj.com/latest-news
+    type: Blog
+  - url: https://www.jnj.com/latest-news.rss
+    type: BlogRSS
   - type: AgenticAccess
     url: agentic-access/johnson-and-johnson-agentic-access.yml
   - type: DomainSecurity
