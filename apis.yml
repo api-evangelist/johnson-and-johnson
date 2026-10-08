@@ -84,6 +84,12 @@ apis:
   - type: Documentation
     url: https://github.com/bulltonic/lifescan-apiportal
 common:
+  - type: Plans
+    url: plans/johnson-and-johnson-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/johnson-and-johnson-rate-limits.yml
+  - type: FinOps
+    url: finops/johnson-and-johnson-finops.yml
   - url: https://www.jnj.com/latest-news
     type: Blog
   - url: https://www.jnj.com/latest-news.rss
