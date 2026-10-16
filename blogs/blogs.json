@@ -1,0 +1,21 @@
+{
+  "repo": "johnson-and-johnson",
+  "feeds": [
+    {
+      "source": "https://www.jnj.com/latest-news",
+      "feed_url": "https://www.jnj.com/latest-news",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://www.jnj.com/latest-news.rss",
+      "feed_url": "https://www.jnj.com/latest-news.rss",
+      "title": "",
+      "saved": 2,
+      "method": "feed"
+    }
+  ],
+  "post_count": 2,
+  "fetched": "2026-10-10T13:15:00Z"
+}
