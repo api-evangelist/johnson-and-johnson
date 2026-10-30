@@ -1,4 +1,4 @@
-# Johnson & Johnson (johnson-and-johnson)
+# Johnson & Johnson
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,56 +66,118 @@
 
 Johnson & Johnson is a multinational pharmaceutical and medical devices corporation. Operating today as Johnson & Johnson Innovative Medicine and MedTech, J&J has historically connected health platforms and APIs through subsidiaries such as LifeScan (OneTouch blood glucose monitoring), which was divested to Platinum Equity in 2018 and continues to operate the LifeScan developer portal referenced here. Consumer health brands (Tylenol, Listerine, Neutrogena, Band-Aid) were spun out as Kenvue in 2023 and are tracked in a separate kenvue index.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/johnson-and-johnson/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/johnson-and-johnson/refs/heads/main/apis.yml)
+**Areas:** Healthcare · Medical Devices · Diabetes · Blood Glucose · Pharmaceuticals · Fortune 100
 
-## Scope
+## Johnson & Johnson on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Johnson & Johnson is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/johnson-and-johnson/](https://apis.io/providers/johnson-and-johnson/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Healthcare
-- Medical Devices
-- Diabetes
-- Blood Glucose
-- Pharmaceuticals
+- [Johnson & Johnson Devices API](https://apis.io/apis/johnson-and-johnson/johnson-and-johnson-devices-api/) — Manage connected glucose monitoring devices.
+- [Johnson & Johnson Glucose Readings API](https://apis.io/apis/johnson-and-johnson/johnson-and-johnson-glucose-readings-api/) — Manage and retrieve blood glucose reading data.
+- [Johnson & Johnson Patients API](https://apis.io/apis/johnson-and-johnson/johnson-and-johnson-patients-api/) — Access patient profile and health information.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-21
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Johnson & Johnson LifeScan API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Johnson & Johnson LifeScan API provides programmatic access to blood glucose monitoring data and diabetes management tools. LifeScan, historically a Johnson & Johnson company (divested in 2018), develops products like the OneTouch brand of blood glucose meters. The API enables developers to integrate glucose monitoring data into health applications and wellness platforms.
+- [Johnson And Johnson Agentic Access](https://apis.io/agentic-access/johnson-and-johnson/johnson-and-johnson-agentic-access/)
 
-- **Human URL:** [https://github.com/bulltonic/lifescan-apiportal](https://github.com/bulltonic/lifescan-apiportal)
-- **Base URL:** `https://api.lifescan.com`
+#### Collections (4)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Blood Glucose
-- Diabetes
-- Healthcare
-- Medical Devices
+- [Johnson & Johnson LifeScan Devices API](https://apis.io/collections/johnson-and-johnson/open-johnson-and-johnson-devices-api/)
+- [Johnson & Johnson LifeScan Devices Glucose Readings API](https://apis.io/collections/johnson-and-johnson/open-johnson-and-johnson-glucose-readings-api/)
+- [Johnson & Johnson LifeScan API](https://apis.io/collections/johnson-and-johnson/open-johnson-and-johnson-lifescan-api/)
+- [Johnson & Johnson LifeScan Devices Patients API](https://apis.io/collections/johnson-and-johnson/open-johnson-and-johnson-patients-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://github.com/bulltonic/lifescan-apiportal)
-- [OpenAPI](openapi/johnson-and-johnson-lifescan-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/johnson-and-johnson-lifescan-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/johnson-and-johnson-lifescan-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Johnson And Johnson Authentication](https://apis.io/security/johnson-and-johnson/johnson-and-johnson-authentication/)
+- [Johnson And Johnson Domain Security](https://apis.io/security/johnson-and-johnson/johnson-and-johnson-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Johnson And Johnson Plans Pricing](https://apis.io/plans/johnson-and-johnson/johnson-and-johnson-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Johnson And Johnson Rate Limits](https://apis.io/rate-limits/johnson-and-johnson/johnson-and-johnson-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Johnson And Johnson Finops](https://apis.io/finops/johnson-and-johnson/johnson-and-johnson-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.jnj.com/)
-- [Portal](https://github.com/johnsonandjohnson)
+- [Blog](https://www.jnj.com/latest-news)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 25.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 41.6 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 5.3 |
+
+**Agent readiness 20.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 9.4** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/johnson-and-johnson/](https://apis.io/providers/johnson-and-johnson/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Johnson & Johnson: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/johnson-and-johnson/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
